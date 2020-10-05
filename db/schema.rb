@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_145706) do
   create_table "pets", force: :cascade do |t|
     t.string "name", null: false
     t.float "monthly_cost"
-    t.string "type", null: false
+    t.string "pet_type", null: false
     t.integer "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
