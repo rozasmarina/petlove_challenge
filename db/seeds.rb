@@ -6,10 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Creating pets and owners"
+puts "Destroying DB..."
+sleep(1)
+
+Owner.destroy_all
+Pet.destroy_all
+
+puts 'Creating owners'
 
 pet_counter = 0
-owner_ counter = 0
+owner_counter = 0
 pet_name = ['Pé de Pano', 'Rex', 'Ajudante do Papai Noel', 'Rex', 'Flora', 'Dino', 'Lassie']
 monthly_cost = ['199.99', '99.99', '99.99', '103.99', '103.99', '177.99', '407.99']
 pet_type = %w[Cavalo Cachorro Cachorro Papagaio Lhama Iguana Ornitorrinco]
@@ -20,20 +26,24 @@ owners = []
 
 7.times do
   owner = Owner.create!(
-    name: owner_name[counter],
+    name: owner_name[owner_counter],
     document: document,
-    birthday: birthday[counter]
+    birthday: birthday[owner_counter]
   )
   owners << owner
   owner_counter += 1
 end
+puts 'Owners created'
 
+puts 'Creating pets'
 7.times do
   Pet.create!(
-    name: pet_name[counter], 
-    monthly_cost: monthly_cost[counter], 
-    pet_type: pet_type[counter],
-    owner: owners[counter]
+    name: pet_name[pet_counter],
+    monthly_cost: monthly_cost[pet_counter],
+    pet_type: pet_type[pet_counter],
+    owner: owners[pet_counter]
   )
   pet_counter += 1
 end
+
+puts 'Pets created'
