@@ -21,7 +21,15 @@ monthly_cost = ['199.99', '99.99', '99.99', '103.99', '103.99', '177.99', '407.9
 pet_type = %w[Cavalo Cachorro Cachorro Papagaio Lhama Iguana Ornitorrinco]
 owner_name = ['Johnny Cash', 'Sid Vicious', 'Axl Rose', 'Joey Ramone', 'Bruce Dickinson', 'Kurt Cobain', 'Elvis Presley']
 document = '555555555'
-birthday = ['26/02/1932', '10/05/1957', '06/02/1962', '19/05/1951', '07/08/1958', '20/02/1967', '17/08/2008']
+birthday = [
+  Date.new(1932, 2, 26),
+  Date.new(1957, 5, 10),
+  Date.new(1962, 2, 6),
+  Date.new(1951, 5, 19),
+  Date.new(1958, 8, 7),
+  Date.new(1967, 2, 20),
+  Date.new(2008, 8, 17)
+]
 owners = []
 
 7.times do
