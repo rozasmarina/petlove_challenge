@@ -1,5 +1,5 @@
 class Owner < ApplicationRecord
-  has_many :pets
+  has_many :pets, dependent: :destroy
   validates :name, :document, :birthday, presence: true
 
   def can_have_swallow?
