@@ -1,9 +1,9 @@
 class OwnersController < ApplicationController
   before_action :set_owner, only: %i[show, destroy]
 
-  def index
-    @owners = Owner.all
-  end
+  # def index
+  #   @owners = Owner.all
+  # end
 
   def show 
   end

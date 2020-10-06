@@ -1,0 +1,15 @@
+<% @owners.each do |owner| %>
+  <p>Nome: <strong><%= owner.name %></strong></p>
+  <p>Documento: <strong><%= owner.document %></strong></p>
+  <p>Data de nascimento: <strong><%= owner.birthday %></strong></p>
+<% end %>
+<% @owners.each do |owner| %>
+  <div class="card">
+    <h5 class="card-header"><%= owner.name %></h5>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+<% end %>
