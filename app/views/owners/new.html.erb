@@ -5,7 +5,7 @@
       <%= simple_form_for @owner do |f| %>
         <%= f.input :name, label: 'Nome' %>
         <%= f.input :document, label: 'Documento' %>
-        <%= f.input :birthday, label: 'Data de nascimento' %>
+        <%= f.input :birthday, as: :date, label: 'Data de nascimento' %>
         <%= f.button :submit, "Adicionar", class: 'btn btn-outline-secondary' %>
       <% end %>
     </div>
