@@ -3,6 +3,7 @@
   <p>Documento: <strong><%= owner.document %></strong></p>
   <p>Data de nascimento: <strong><%= owner.birthday %></strong></p>
 <% end %>
+
 <% @owners.each do |owner| %>
   <div class="card">
     <h5 class="card-header"><%= owner.name %></h5>
