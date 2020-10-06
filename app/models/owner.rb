@@ -9,9 +9,4 @@ class Owner < ApplicationRecord
   def can_have_cat?
     self.name[0].downcase != 'a'
   end
-  
-  def can_have_cat?
-    self.name[0].downcase != 'a'
-  end
-
 end
