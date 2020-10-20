@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :owners, except: %i[index edit update]
-
   root to: 'owners#new'
+  resources :owners, except: %i[index edit update] do
+    resources :pets, only: %i[new create]
+  end
+  resources :pets, only: %i[destroy]
+
 end
