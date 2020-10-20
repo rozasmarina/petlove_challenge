@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   resources :owners, except: %i[index edit update] do
     resources :pets, only: %i[new create]
   end
-  resources :pets, only: %i[destroy]
-
+  resources :pets, only: %i[show destroy]
 end

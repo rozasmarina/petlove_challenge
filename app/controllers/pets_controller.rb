@@ -2,6 +2,8 @@ class PetsController < ApplicationController
   before_action :set_pet, only: %i[show destroy]
   before_action :set_owner, only: %i[new create]
 
+  def show; end
+
   def new
     @owner = Owner.find(params[:owner_id])
     @pet = Pet.new
@@ -9,7 +11,7 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
-    @pet.owner = owner
+    @pet.owner = @owner
     if @pet.save
       redirect_to pet_path(@pet), notice: 'Pet adicionado com sucesso'
     else
@@ -20,7 +22,7 @@ class PetsController < ApplicationController
   private
 
   def set_owner
-    @owner = Owner.find(params[:id])
+    @owner = Owner.find(params[:owner_id])
   end
 
   def set_pet

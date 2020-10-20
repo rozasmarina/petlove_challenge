@@ -3,4 +3,5 @@
   <p>Nome: <strong><%= @owner.name %></strong></p>
   <p>Documento: <strong><%= @owner.document %></strong></p>
   <p>Data de nascimento: <strong><%= @owner.birthday %></strong></p>
+  <%= link_to 'Adicione um pet', new_owner_pet_path(@owner) %>
 </div>
