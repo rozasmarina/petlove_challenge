@@ -12,7 +12,11 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.owner = @owner
-    if @pet.save
+    if @owner.name[0].downcase == 'a' && @pet.pet_type.downcase == 'gato'
+      redirect_to new_owner_pet_path(@owner), alert: 'Você não está autorizado a ter gatos, escolha outro pet'
+    elsif Date.today - @owner.birthday >= 18 && @pet.pet_type.downcase == 'andorinha'
+      redirect_to new_owner_pet_path(@owner), alert: 'Você não está autorizado a ter andorinhas, escolha outro pet'
+    elsif @pet.save
       redirect_to pet_path(@pet), notice: 'Pet adicionado com sucesso'
     else
       render :new
